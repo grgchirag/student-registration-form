@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Registration Form
+            <div style="float: right;"><a href="index.html">Click for Enquiry</a></div>
+          </div>
+        <div class="content">
+            <form action="#" name="submit-to-google-sheet" method="POST">
+                <div class="cust-info">
+                    <div class="user-details">
+                        <h2 style="width: 100%; margin-bottom: 10px;">Customer Information</h2>
+                        <div class="input-box">
+                            <span class="details">Date</span>
+                            <input type="date" name="Date" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Full Name</span>
+                            <input type="text" name="Name" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="email" name="Email" placeholder="Enter your Email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Address</span>
+                            <input type="text" name="Home_Address" placeholder="Enter your Address" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Father Name</span>
+                            <input type="text" name="Father_Name" placeholder="Enter your Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Father Occupation</span>
+                            <input type="text" name="Father_Occupation" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="number" name="Phone_Number" placeholder="Enter your Mobile Number" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Alt. Number</span>
+                            <input type="number" name="Alt_Number" placeholder="Enter your Mobile Number">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Intrested Course</span>
+                            <input type="text" name="Intrested_Course" placeholder="Confirm your Course" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Qualification</span>
+                            <input type="text" name="Qualification" placeholder="Confirm your Course" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Reference</span>
+                            <input type="text" name="Reference" placeholder="Confirm your Course" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Gender</span>
+                            <input type="text" name="Gender" placeholder="Confirm your Course" required>
+                        </div>
+                    </div>
+                    <div class="user-details">
+                        <h2 style="width: 100%; margin-bottom: 10px;">Qualifications</h2>
+                        <div class="input-box">
+                            <span class="details">School Name</span>
+                            <input type="text" name="School_Name_X" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Location</span>
+                            <input type="text" name="Location_X" placeholder="Enter your Email" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Class</span>
+                            <input type="number" name="Class_X" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Percentage</span>
+                            <input type="text" name="Percentage_X" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">School Name</span>
+                            <input type="text" name="School_Name_H" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Location</span>
+                            <input type="text" name="Location_H" placeholder="Enter your Email" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Class</span>
+                            <input type="number" name="Class_H" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Percentage</span>
+                            <input type="text" name="Percentage_H" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">University Name</span>
+                            <input type="text" name="University_Name" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Branch</span>
+                            <input type="text" name="Branch" placeholder="Enter your Email" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Batch Year</span>
+                            <input type="text" name="Batch_Year" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Aggregate College</span>
+                            <input type="text" name="Aggregate_College" placeholder="Enter your Name" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Query</span>
+                            <textarea name="Query" id="" rows="10" style="width: 100%;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzfsJdbdOBV1w-9wacyXdkuBrh0bkS9dZ-ohw3CSh7aWSk9nGOzn15sKqtmFv2NtxUw/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => window.location.href = "http://www.edbglobal.in/")
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
